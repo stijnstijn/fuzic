@@ -1,0 +1,393 @@
+.event-card {
+  border: 1px solid $dark-grey;
+  border-radius: $radius;
+  background: $white;
+  
+  width: 100%;
+  
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0;
+  
+  .profile, img {
+    vertical-align: top;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  .profile {
+    width: 100%;
+  }
+
+  header {
+    padding: 8px 8px 4px 8px;
+    position: relative;
+    background: $highlight-color;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    
+    a, .fa {
+      color: $white;
+    }
+    
+
+  .link-list {
+    font-size: $fontsize;
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    
+    ul, li {
+      display: inline-block;
+      border: 0;
+    }
+    
+    h3, li {
+      font-size: $smaller;
+      color: $highlight-color;
+    }
+    
+    li {
+      margin-left: 1em;
+    }
+    
+    a:not(:hover) {
+      text-decoration: none;
+    }
+  }
+  }
+  
+  h2 {
+    color: $highlight-color;
+    font-size: 260%;
+    line-height: 1.25em;
+    display: inline;
+    font-weight: 800;
+    margin-left: 5px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .franchise {
+    font-size: 80%;
+    display: inline-block;
+    color: $light-grey;
+    margin-left: 4px;
+  }
+  
+  .franchise a {
+    color: inherit;
+    text-decoration: none;
+    transition: .25s;
+  }
+  
+  .franchise a:hover {
+    text-decoration: underline;
+    color: $dark-grey;
+  }
+  
+  .date {
+    color: $light-grey;
+    text-indent: 8px;
+    font-size: $smaller;
+  }
+  
+  .type {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    text-align: center;
+    width: 95px;
+    
+    .fa {
+      color: $highlight-color;
+      float: right;
+    }
+    
+    span {
+      text-transform: uppercase;
+      color: $grey;
+      font-size: 80%;
+      float: left;
+      top: -5px;
+      margin-top: 6px;
+      display: none;
+    }
+  }
+  
+  .type:hover span {
+    display: block;
+  }
+  
+  .type.caster {
+    top: 5px;
+  }
+  
+  ul.statistics {
+    border-top: 1px solid $grey;
+    width: 100%;
+    font-size: 0;
+  
+    li {
+      display: inline-block;
+      font-size: 16px;
+      width: 150px;
+      padding: 8px;
+      box-sizing: border-box;
+      position: relative;
+      height: 65px;
+      vertical-align: top;
+    }
+    
+    li:first-child {
+      width: 159px;
+      padding-left: 13px;
+    }
+  
+    li:not(:last-child) {
+      border-right: 1px solid $grey;
+    }
+  
+    li.live-notice {
+      display: block;
+      clear: both;
+      width: 100%;
+      text-align: center;
+      font-size: $smaller;
+      border-top: 1px solid $grey;
+      height: 30px;
+      padding: 4px 8px;
+      
+      span.live-badge {
+        text-transform: uppercase;
+        color: $highlight-color;
+        font-weight: 800;
+        
+        i {
+          color: $red;
+        }
+      }
+    }
+  }
+  
+  ul.statistics.live li:nth-child(6) {
+    border-right: 0;
+  }
+  
+  img {
+    width: 134px;
+    height: 134px;
+    border-right: 1px solid $grey;
+  }
+  
+  p.rank {
+    font-weight: 800;
+  }
+  
+  ul h3 {
+    text-transform: uppercase;
+    color: $dark-grey;
+    font-size: 80%;
+    transition: .25s;
+  }
+  
+  ul p {
+    font-size: 160%;
+    font-family: Aaux, sans-serif;
+  }
+}
+
+.event-card.sticky {
+  position: fixed;
+  top: -15px;
+  z-index: 3;
+  background: $white;
+  left: 50%;
+  margin-left: -480px;
+  width: 958px;
+  border-radius: 0;
+  
+  .fa {
+    color: $highlight-color;
+  }
+  
+  header {
+    background: $white;
+    
+    a {
+      color: $highlight-color;
+    }
+  }
+  
+  .profile {
+    position: relative;
+    z-index: 2;
+  }
+  
+  ul {
+    background: $white;
+  }
+
+  
+  ul p {
+    font-size: $fontsize;
+    display: inline;
+    float: right;
+  }
+  
+  ul.statistics li {
+    padding: 4px 8px;
+    height: 32px;
+  }
+  
+  ul.statistics li:nth-child(6) {
+    width: 190px;
+  }
+  
+  li h3 {
+    display: inline-block;
+  }
+  
+  li:nth-child(4) h3 {
+    color: transparent;
+    height: 28px;
+    padding-top: 3px;
+    width: 40px;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  li:nth-child(4) h3::before {
+    content: 'V×H';
+    transition: .25s;
+    color: $grey;
+  }
+  
+  :hover li:nth-child(2) h3::before {
+    color: $dark-grey;
+  }
+
+  .date {
+    display: none;
+  }
+  
+  h2 {
+    font-size: $bigger;
+  }
+}
+
+.event-card.sticky .profile::after {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 50%;
+  margin-left: -478px;
+  content: '\A0';
+  width: 954px;
+  height: 1px;
+  z-index: -1;
+  @include shadow-dark;
+}
+
+.event-comparison {
+  font-size: $fontsize;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid $grey;
+  border-radius: $radius;
+  width: 40%;
+  background: $white;
+  text-align: left;
+  
+  header {
+    background: $highlight-color;
+    color: $white;
+    padding: 8px;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    
+    a {
+      color: $white;
+    } 
+    
+    h2 {
+      font-weight: 800;
+      font-size: 200%;
+      line-height: 1.25em;
+      height: 80px;
+      overflow: hidden;
+    }
+  }
+  
+  .date, .franchise, .permalink {
+    font-size: $smaller;
+  }
+  
+  li {
+    border-top: 1px solid $grey;
+    padding: 4px;
+    
+    h3 {
+      text-transform: uppercase;
+      color: $dark-grey;
+      font-size: $smaller;
+    }
+    
+    p {
+      font-family: Aaux, sans-serif;
+      font-size: $bigger;
+    }
+  }
+  
+  li.permalink {
+    padding: 2px 4px;
+  }
+  
+  li.winner {
+    h3, p {
+      color: $highlight-color;
+      font-weight: 800;
+    }
+  }
+}
+
+.event-comparison:first-of-type {
+  text-align: right;
+}
+
+.comparison-wrap {
+  text-align: center;
+  font-size: 0;
+}
+
+.comparison-difference {
+  background: #FFF;
+  display: inline-block;
+  font-size: $fontsize;
+  border-top: 1px solid $grey;
+  border-bottom: 1px solid $grey;
+  margin-top: 145px;
+  
+  li {
+    padding: 4px 8px;
+    height: 48px;
+    font-family: Aaux, sans-serif;
+    font-size: 18px;
+    line-height: 48px;
+    text-align: center;
+  }
+  
+  .red {
+    color: $red;
+  }
+  
+  .green {
+    color: $green;
+  }
+  
+  li:not(:first-child) {
+    border-top: 1px solid $grey;
+  }
+}

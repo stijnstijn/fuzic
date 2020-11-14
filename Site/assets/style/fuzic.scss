@@ -1,0 +1,763 @@
+@import 'definitions';
+
+@import url('reset.css');
+@import url('fonts.css');
+
+@import 'header';
+@import 'playercard';
+@import 'eventcard';
+@import 'footer';
+@import 'sidebar';
+@import 'frontpage';
+
+
+/* font awesome extras */
+.fa-arrow-circle-up {
+  color: $green;
+}
+
+.fa-arrow-circle-down {
+  color: $red;
+}
+
+.fa-circle {
+  color: $blue;
+}
+
+
+/* overall styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: $text-color;
+  background: $white;
+}
+
+a {
+  color: $highlight-color;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  height: 1px;
+  width: 100%;
+  display: block;
+  border: 0;
+  background: $light-grey;
+  margin: 2em auto;
+  clear: both;
+}
+
+.column-wrapper {
+  font-size: 0;
+}
+
+
+/* header bar */
+#top-bar {
+  z-index: 1;
+  border-top: 84px solid $highlight-color * $slighten;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  @include shadow;
+}
+
+h1 {
+  font-size: 260%;
+  font-family: Roboto, sans-serif;
+  font-weight: 800;
+  color: $highlight-color;
+  margin-bottom: 32px;
+  padding-bottom: 8px;
+  padding-top: 16px;
+}
+
+h2, h3 {
+  font-family: Roboto, sans-serif;
+  font-weight: 800;
+}
+
+
+/** breadcrumbs **/
+.breadcrumbs {
+  font-size: $smaller;
+  border-bottom: 1px solid $grey;
+  margin-bottom: 1em;
+}
+
+.breadcrumbs  a {
+  text-decoration: none;
+  color: $dark-grey;
+  transition: .25s
+}
+  
+.breadcrumbs:hover a, .breadcrumbs:hover li:not(:last-child)::after {
+  color: $highlight-color;
+}
+  
+.breadcrumbs ol {
+  display: inline-block;
+}
+  
+.breadcrumbs li {
+  display: inline-block;
+}
+  
+.breadcrumbs li:not(:last-child)::after {
+  content: ' \00BB';
+  color: $dark-grey;
+}
+  
+.breadcrumbs .fa {
+  color: $dark-grey;
+}
+  
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs:hover .fa {
+  color: black;
+}
+
+
+/* notice */
+.notice {
+  font-size: $fontsize;
+  padding: 4px;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto 32px auto;
+  border: 1px solid $grey;
+  border-radius: $radius;
+  background: $white;
+  color: $darkest-grey;
+}
+
+.notice.inline {
+  width: 100%;
+}
+
+
+/** popup, not sure this is used anywhere */
+.popup {
+  width: 458px;
+  height: 128px;
+  margin: 32px auto 32px auto;
+  border: 1px solid $grey;
+  padding: 8px;
+  background: $white;
+  border-radius: $radius;
+}
+
+.popup h3 {
+  border-bottom: 1px solid $grey;
+  color: $highlight-color;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+
+/* main body */
+#main {
+  width: 960px;
+  margin: 0 auto;
+  position: relative;
+  top: -60px;
+  border: 1px solid ($dark-grey * $darken);
+  border-width: 0 1px 1px 1px;
+  padding: 160px 20px 20px 20px;
+  box-sizing: border-box;
+  background: $white;
+  background: url(img('grain.png'));
+}
+
+table {
+  font-size: $fontsize;
+  width: 100%;
+  border: 1px solid $grey;
+  border-radius: $radius;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+td, th {
+  border-top: 1px solid $grey;
+  border-left: 1px solid $grey;
+}
+  
+tr:first-child td, tr:first-child th {
+  border-top: 0;
+}
+  
+td:first-child, th:first-child {
+  border-left: 0;
+}
+
+th {
+  font-family: Roboto, sans-serif;
+  font-weight: 800;
+}
+
+td, th {
+  padding: 4px;
+  background: $white;
+}
+  
+tr:nth-child(2n) td, tr:nth-child(2n) th {
+  background: $zebra;
+}
+  
+tr.nav td, tr.nav th {
+  background: transparent;
+}
+  
+table .fa {
+  color: $highlight-color;
+}
+  
+tr td.live {
+  text-align: center !important;
+  background: $highlight-color;
+  color: $white;
+}
+
+table .fa-gamepad, table .fa-microphone {
+  display: block;
+  float: right;
+   margin: 4px;
+  cursor: help;
+  color: $dark-grey;
+  transition: .25s;
+}
+
+td:hover .fa {
+  color: $highlight-color;
+}
+
+.sort-by, .byline {
+  font-size: 0.5em;
+  display: inline-block;
+  margin-left: 0.5em;
+  font-weight: normal;
+}
+
+.byline {
+  color: $black;
+}
+
+.inline-badge {
+  background: $highlight-color;
+  border-radius: 0.9em;
+  color: $white;
+  font-size: 0.5em;
+  display: block;
+  padding: 0 0.75em;
+  height: 1.8em;
+  line-height: 1.9em;
+  margin-right: 0.5em;
+  margin-top: 0.9em;
+  position: relative;
+  top: -2px;
+  float: right;
+}
+
+.inline-badge:hover {
+  background: $highlight-darker;
+  text-decoration: none;
+}
+
+/** chart controls **/
+.controllable-chart {
+  font-size: 0;
+}
+
+.controllable-chart h4, .chart-nav h4 {
+  text-transform: uppercase;
+  font-size: $fontsize;
+   padding: 4px;
+  color: #AAA;
+}
+  
+.controllable-chart li {
+  font-size: $fontsize;
+  color: $highlight-color;
+}
+  
+.controllable-chart .chart-controls, .controllable-chart .make-chart {
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+  
+.controllable-chart .chart-controls {
+  width: 25%;
+}
+
+.controllable-chart .chart-controls a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  padding: 4px 4px 4px 8px;
+}
+
+.controllable-chart .chart-controls li {
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+.controllable-chart .chart-controls li.current {
+  color: $white;
+  @include background-gradient;
+  border: 1px solid $grey;
+  border-right: 0;
+  box-sizing: border-box;
+}
+
+.controllable-chart .chart-controls li:hover {
+  @include background-gradient-lighter;
+  color: $white;
+}
+
+.controllable-chart .make-chart {
+  width: 75%;
+  height: 197px;
+  border: 1px solid $grey;
+  border-radius: $radius;
+}
+
+.controllable-chart .highcharts-container {
+  border-radius: $radius;
+}
+
+.controllable-chart.stream  .make-chart {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.chart-nav h4 {
+  width: 25%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.chart-nav ul {
+  background: $white;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+  border: 1px solid $grey;
+  padding: 4px 4px 0 4px;
+  box-sizing: border-box;
+  border-bottom: 0;
+  width: 75%;
+  display: inline-block;
+}
+
+.chart-nav li {
+  display: inline-block;
+  text-align: center;
+  width: 48%;
+  font-size: $smaller;
+}
+.chart-nav li:first-child, .chart-nav li:last-child {
+  width: 25%;
+  text-align: left;
+}
+.chart-nav li:last-child {
+  text-align: right;
+}
+
+/** team list **/
+ul.list {
+  list-style: disc outside;
+  margin-left: 24px;
+}
+
+.team-list {
+  text-align: center;
+  font-size: 0;
+}
+
+.team-list li {
+  display: inline-block;
+  width: 400px;
+  border: 1px solid $grey;
+  height: 150px;
+  font-size: $fontsize;
+  border-radius: $radius;
+  margin: 0 16px 16px 0;
+  text-align: left;
+}
+  
+.team-list  li > a {
+  display: inline-block;
+  margin: 0;
+  width: 150px;
+}
+  
+.team-list img, .tea-mlist .info, .team-list .avatar {
+  display: inline-block;
+  vertical-align: top;
+}
+  
+.team-list img, .team-list .avatar {
+  border-right: 1px solid $grey;
+  width: 150px;
+  height: 150px;
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+  
+.team-list .avatar {
+  background: $highlight-color;
+  color: $white;
+  font-size: 124px;
+  padding-top: 16px;
+  height: 134px;
+  text-align: center;
+}
+  
+.team-list .info {
+  width: 200px;
+  padding: 8px;
+  position: relative;
+  text-align: left;
+  height: 142px;
+}
+  
+.team-list h3 {
+  font-size: 150%;
+}
+  
+.team-list h3 a {
+  text-decoration: none;
+}
+  
+.team-list  h3 a:hover {
+  text-decoration: underline;
+}
+  
+.team-list p {
+  position: absolute;
+  bottom: 16px;
+  left: 8px;
+}
+
+
+/** pagination **/
+nav.page-list {
+  text-align: center;
+}
+
+nav.page-list a {
+  text-decoration: none;
+  background: $zebra;
+  font-size: 10px;
+  padding: 0 3px;
+  display: inline-block;
+  height: $fontsize;
+  line-height: 17px;
+  border-radius: $radius;
+  min-width: 10px;
+}
+  
+nav.page-list .previous, nav.page-list .next, nav.page-list .previous:hover, nav.page-list .next:hover {
+  background: transparent;
+}
+  
+nav.page-list a:hover, nav.page-list .current {
+  background: $highlight-color;
+  color: $white;
+}
+  
+nav.page-list .fa {
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  top: -1px;
+  position: relative;
+}
+  
+nav.page-list .fa:hover {
+  background: $highlight-color;
+  color: $white;
+  box-sizing: border-box;
+  border-radius: $radius;
+}
+
+
+/** markdown pages **/
+.page h2 {
+  border-bottom: 1px solid $highlight-color;
+  color: $highlight-color;
+  font-size: 160%;
+  padding-bottom: 8px;
+  font-weight: 800;
+}
+  
+.page h2:not(:first-of-type) {
+  margin-top: 32px;
+}
+  
+.page em {
+  font-style: italic;
+}
+  
+.page strong {
+  font-weight: 800;
+}
+  
+.page p, .page ul {
+  width: 100%;
+}
+  
+.page p {
+  margin: 12px 0;
+  line-height: 1.6em;
+}
+  
+.page ul, .page ol {
+  list-style-position: outside;
+}
+  
+.page ul {
+  list-style-type: disc;
+  margin-left: 16px;
+}
+  
+.page .date, .page .post {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.page h3 {
+  margin-bottom: 1em;
+}
+  
+  
+.page .date {
+  width: 20%;
+}
+  
+.page .post {
+  width: 80%;
+}
+
+
+/* tooltips */
+#tooltip {
+  border: 1px solid $highlight-color;
+  @include background-gradient;
+  padding: 0 4px;
+  font-size: $smaller;
+  position: absolute;
+  top: 0;
+  color: $white;
+  left: 0;
+  border-radius: $radius;
+  @include shadow;
+  z-index: 10;
+  max-width: 300px;
+  display: block;
+}
+
+#match-tooltip {
+  position: absolute;
+  top: 581px;
+  left: 300px;
+  z-index: 10;
+  width: 200px;
+  height: 10px;
+  opacity: 0;
+}
+
+#match-tooltip div {
+  position: relative;
+  border: 0;
+  border-radius: $radius;
+  padding: 0.10em;
+  color: $white;
+  @include background-gradient;
+  @include shadow;
+  text-align: center;
+  font-size: $smaller;
+}
+
+#match-tooltip div:after, #match-tooltip div:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+#match-tooltip div:after {
+  border-color: rgba(136, 183, 213, 0);
+  border-bottom-color: $highlight-color;
+  border-width: 7px;
+  margin-left: -7px;
+}
+#match-tooltip div:before {
+  border-color: rgba(136, 183, 213, 0);
+  border-bottom-color: $highlight-color;
+  border-width: 7px;
+  margin-left: -7px;
+}
+
+.tooltippable {
+  cursor: help;
+}
+
+.square {
+  font-family: Roboto, serif;
+  font-weight: 800;
+  color: $white;
+  width: 800px;
+  height: 800px;
+  background: #a03a17;
+  overflow: hidden;
+  margin: 60px;
+  font-size: 380px;
+  line-height: 1370px;
+  text-indent: -10px;
+}
+
+
+/** multiboxes **/
+#multibox-items {
+  position: absolute;
+  border: 1px solid $grey;
+  border-radius: 0 $radius $radius $radius;
+  background: $white;
+  margin-bottom: 32px;
+}
+
+#multibox-items li {
+  padding: 0 4px;
+  font-size: $smaller;
+  cursor: pointer;
+}
+  
+#multibox-items li:hover {
+  background: $highlight-color;
+  color: $white;
+}
+
+.show-only {
+  margin-top: 1em;
+}
+
+.relative-rank {
+  color: $dark-grey;
+  font-size: 0.8em;
+} 
+
+
+/** specific table column widths */
+.sessions-table {
+  td:nth-child(1), th:nth-child(1) { width: 263px; }
+  td:nth-child(2), th:nth-child(2) { width: 100px; }
+  td:nth-child(3), th:nth-child(3) { width: 100px; }
+  td:nth-child(4), th:nth-child(4) { width: 60px; }
+  td:nth-child(5), th:nth-child(5) { width: 60px; } 
+  td:nth-child(6), th:nth-child(6) { width: 60px; } 
+  td:nth-child(4) { text-align: right; }
+  td:nth-child(5) { text-align: right; } 
+  td:nth-child(6) { text-align: right; } 
+}
+
+.event-list {
+  td:nth-child(1), th:nth-child(1) { width: 263px; }
+  td:nth-child(2), th:nth-child(2) { width: 100px; }
+  td:nth-child(3), th:nth-child(3) { width: 60px; }
+  td:nth-child(4), th:nth-child(4) { width: 60px; } 
+  td:nth-child(5), th:nth-child(5) { width: 60px; } 
+  td:nth-child(3) { text-align: right; }
+  td:nth-child(4) { text-align: right; } 
+  td:nth-child(5) { text-align: right; } 
+}
+
+.event-list.ranked {
+  td:nth-child(1), th:nth-child(1) { width: 25px; }
+  td:nth-child(2), th:nth-child(2) { width: 263px; }
+  td:nth-child(3), th:nth-child(3) { width: 100px; }
+  td:nth-child(4), th:nth-child(4) { width: 60px; } 
+  td:nth-child(5), th:nth-child(5) { width: 60px; } 
+  td:nth-child(6), th:nth-child(6) { width: 60px; } 
+  td:nth-child(4) { text-align: right; } 
+  td:nth-child(5) { text-align: right; } 
+  td:nth-child(6) { text-align: right; } 
+}
+
+.rank-table {
+  td:nth-child(1), th:nth-child(1) { width: 35px; }
+  td:nth-child(3), th:nth-child(3) { width: 60px; }
+  td:nth-child(4), th:nth-child(4) { width: 60px; }
+  td:nth-child(5), th:nth-child(5) { width: 70px; }
+  td:nth-child(6), th:nth-child(6) { width: 75px; }
+}
+
+.rank-table.relative {
+  td:nth-child(1), th:nth-child(1) { width: 50px; }
+}
+
+.streams-table {
+  td:nth-child(3), th:nth-child(3) { width: 110px; }
+  td:nth-child(2), th:nth-child(2) { width: 310px; }
+}
+
+.teams-table img, .teams-table .avatar {
+  display: none;
+}
+
+.teams-table tr td {
+  vertical-align: top;
+}
+
+.teams-table:not(.rank-table) tr:not(.nav) td:first-child {
+  padding: 0;
+  width: 13em;
+}
+
+.teams-table .teamname {
+  padding: 4px;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 162px;
+}
+
+.teams-table img, .teams-table .avatar {
+  width: 32px;
+  height: 32px;
+  border-right: 1px solid $grey;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.teams-table .avatar {
+  background: $highlight-color;
+  font-size: 1.4em;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.teams-table .avatar .fa {
+  color: $white;
+}
+
+.header-logo {
+  height: 45px;
+  width: 45px;
+  @include shadow;
+  display: inline-block;
+  position: relative;
+  top: 7px;
+}

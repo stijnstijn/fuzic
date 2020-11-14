@@ -1,0 +1,56 @@
+$sdarken:           0.95;
+$darken:            0.90;
+$lighten:           1.10;
+$slighten:          1.05;
+$smallest:          10px;
+$smaller:           12.8px;
+$bigger:            19.2px;
+
+$highlight-color:   base_color();
+$highlight-darker:  $highlight-color * $darken;
+$highlight-lighter: $highlight-color * $lighten;
+$text-color:        #000;
+$grey:              #DDD;
+$white:             #FFF;
+$black:             #000;
+$zebra:             #FFF * $sdarken;
+$light-grey:        $grey * $lighten;
+$lightest-grey:     $grey * $lighten * $lighten;
+$dark-grey:         $grey * $darken;
+$darkest-grey:      $grey * $darken * $darken * $darken * $darken * $darken;
+$red:               rgb(240, 0, 20);
+$green:             rgb(0, 220, 40);
+$blue:              $dark-grey;
+$radius:            4px;
+
+$fontsize:          16px;
+$font:				'Segoe UI', sans-serif;
+
+@mixin background-gradient() {
+  background: $highlight-color linear-gradient($highlight-color, $highlight-color * $darken);
+}
+
+@mixin background-gradient-darker() {
+  background: $highlight-color linear-gradient(($highlight-color * $darken), ($highlight-color * $darken) * $darken);
+}
+
+@mixin background-gradient-lighter() {
+  background: $highlight-color linear-gradient(($highlight-color * $lighten), ($highlight-color * $lighten) * $darken);
+}
+
+@mixin shadow() {
+  box-shadow: 0 0 15px #888;
+}
+
+@mixin shadow-light() {
+  box-shadow: 0 0 5px #888;
+}
+
+
+@mixin shadow-dark() {
+  box-shadow: 0 0 15px #000;
+}
+
+@function clamp($value, $min, $max) {
+  @return if($value > $max, $max, if($value < $min, $min, $value));
+}

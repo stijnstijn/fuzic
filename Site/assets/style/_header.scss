@@ -1,0 +1,212 @@
+header#top {
+  color: $white;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-left: -480px;
+  z-index: 4;
+  height: 84px;
+}
+
+header#top #site-header-wrap {
+  border-width: 1px 1px 0 1px;
+  border-color: $highlight-color * $darken * $darken * $darken;
+  border-style: solid;
+  @include background-gradient;
+  height: 60px;
+  width: 960px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+header#top .logo, header#top nav {
+  display: inline-block;
+  vertical-align: top;
+}
+
+header#top #subsite-nav {
+  display: block;
+  clear: both;
+  font-size: ($smaller * 0.95);
+  text-align: right;
+  background: $highlight-color * $slighten;
+}
+
+header#top #subsite-nav li {
+  display: inline-block;
+  opacity: 0.75;
+  transition: 0.25s;
+}
+
+header#top:hover #subsite-nav li.current, header#top #subsite-nav li:hover, header#top:hover #subsite-nav li:first-child {
+  opacity: 1;
+}
+
+header#top #subsite-nav li.current a {
+  background: $white;
+  color: $highlight-color;
+  border-radius: $radius;
+  padding: 1px 4px 0 4px;
+}
+
+header#top #subsite-nav li:not(:last-child):not(:first-child)::after {
+  content: ' \2022';
+}
+
+header#top .logo {
+  font-family: Aaux, sans-serif;
+  font-weight: 800;
+  text-transform: lowercase;
+  overflow: hidden;
+  height: 60px;
+  font-size: 115px;
+  line-height: 50px;
+  text-indent: 25px;
+  margin-right: 25px;
+}
+
+header#top #site-nav li {
+  display: inline-block;
+}
+
+header#top a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header#top nav#site-nav a:hover {
+  text-decoration: underline;
+}
+
+header#top #site-nav ul {
+  text-transform: lowercase;
+  font-family: Aaux, sans-serif;
+  margin-right: 15px;
+}
+
+header#top h3 {
+  font-family: Aaux, sans-serif;
+}
+
+header#top nav#site-nav {
+  height: 60px;
+}
+
+header#top nav#site-nav > ul {
+  height: 100%;
+}
+
+header#top nav#site-nav > ul > li {
+  padding: 5px 5px;
+  height: 100%;
+}
+
+header#top nav#site-nav > ul > li:hover {
+  @include background-gradient-darker;
+}
+
+header#top nav#site-nav li li:not(:last-child)::after {
+  content: ' \2022';
+  position: relative;
+  top: 1px;
+}
+
+header#top h3 {
+  font-size: 120%;
+}
+
+.beta {
+  position: absolute;
+  bottom: -18px;
+  left: -27px;
+  font-size: 22px;
+  opacity: 0;
+  border-radius: $radius;
+  padding: 0;
+  transition: .25s;
+  cursor: help;
+}
+
+#top:hover .beta {
+  opacity: .65;
+}
+
+#top:hover .beta:hover {
+  opacity: 1;
+}
+
+/** timezone selector **/
+#timezone-wrapper {
+  display: none;
+  vertical-align: top;
+  height: 40px;
+  position: absolute;
+  top: 0.8em;
+  right: 1em;
+  opacity: 0.75;
+  transition: .25s;
+}
+
+#top:hover #timezone-wrapper {
+  opacity: 1;
+}
+
+#select-timezone, #search-wrapper input {
+  background: $highlight-color;
+  border-color: $highlight-darker;
+  @include background-gradient;
+  color: $white;
+}
+
+#select-timezone:focus, #search-wrapper input:focus {
+  @include background-gradient-darker;
+  outline: 0;
+  opacity: 1;
+}
+
+#timezone-wrapper label {
+  color: $white;
+  width: 73px;
+  line-height: 10px;
+  text-align: center;
+  margin-bottom: 0.25em;
+  text-transform: lowercase;
+  font-family: $font;
+  display:block;
+  font-family: Aaux, sans-serif;
+}
+
+nav #timezone-wrapper .fa {
+  margin-right: 5px;
+  display: none;
+}
+
+nav:hover #timezone-wrapper label span {
+  text-align: center;
+}
+
+nav:hover #timezone-wrapper .fa {
+  display: none;
+}
+
+#timezone-wrapper label .fa {
+  margin-top: -5px;
+}
+
+#timezone-wrapper label, #timezone-wrapper select {
+  font-size: $smaller;
+}
+
+#select-timezone {
+  width: 73px;
+  border-radius: $radius;
+  padding: 3px;
+  display: block;
+  cursor: pointer;
+}
+
+#select-timezone option {
+  background: #FFF;
+  color: $text-color;
+}

@@ -1,0 +1,67 @@
+{
+  "sc2": {
+    "name": "StarCraft II",
+    "wiki": "starcraft2",
+    "twitch": "490422",
+    "afreeca": ["90100000", "00040016"],
+    "twitter": "@starcraft",
+    "piwik_id": "1",
+    "subdomain": "www",
+    "douyu": "SC",
+    "youtube": ["UCjameb_0MK8j0iCyUcCfyvA", "UCnFPpAbL_PBgSosA8LvcjyA"],
+    "goodgame": ["starcraft-ii", "starcraft-ii-heart-of-the-swarm", "starcraft-ii-legacy-of-the-void"],
+    "color": "#E82C0C",
+    "fuzic_twitter": "fuzicnl"
+  },
+  "hearthstone": {
+    "name": "Hearthstone",
+    "wiki": "hearthstone",
+    "twitch": "138585",
+    "afreeca": ["90080000", "00040039"],
+    "youtube": ["UCNbEdsRTnu2bOSoTCWGznqA"],
+    "piwik_id": "5",
+    "subdomain": "hearthstone",
+    "douyu": "How",
+    "goodgame": ["hearthstone-heroes-of-warcraft"],
+    "color": "#A75D2C"
+  },
+  "heroes": {
+    "name": "Heroes of the Storm",
+    "wiki": "heroes",
+    "twitch": "32959",
+    "afreeca": ["90180000", "00040050"],
+    "youtube": ["UCxzJ9le0-E779Lc0ItXLXiw"],
+    "twitter": "@BlizzHeroes",
+    "piwik_id": "2",
+    "subdomain": "heroes",
+    "douyu": "HOTS",
+    "goodgame": ["heroes-of-the-storm"],
+    "color": "#7D5D8A",
+    "fuzic_twitter": "fuzicHeroes"
+  },
+  "broodwar": {
+    "name": "StarCraft: Brood War",
+    "wiki": "starcraft",
+    "twitch": "11989",
+    "afreeca": ["00040001"],
+    "goodgame": ["starcraft-brood-war"],
+    "youtube": ["UCgXplrUTQZfD08LtQxAS0SQ", "UCSk2QZlUoZCgC5pdTPQmhqA", "UCSl4ZFb6byXYYx029EdfxZQ"],
+    "twitter": "StarCraft: Brood War",
+    "piwik_id": "3",
+    "subdomain": "broodwar",
+    "color": "#435468"
+  },
+  "overwatch": {
+    "name": "Overwatch",
+    "wiki": "overwatch",
+    "twitch": "488552",
+    "afreeca": ["00040058"],
+    "goodgame": ["overwatch"],
+    "youtube": ["UCONmUmaDEnG94vzGwtMxdKQ"],
+    "twitter": "@PlayOverwatch",
+    "piwik_id": "4",
+    "subdomain": "overwatch",
+    "color": "#24A0ED",
+    "fuzic_twitter": "fuzicOverwatch"
+  }
+}

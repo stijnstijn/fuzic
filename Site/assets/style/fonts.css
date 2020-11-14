@@ -1,0 +1,28 @@
+@font-face {
+  font-family: Aaux;
+  font-weight: 200;
+  src: url('../fonts/Aaux ProThin.eot');
+  src: url('../fonts/Aaux ProThin.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Aaux ProThin.ttf') format('truetype');
+}
+@font-face {
+  font-family: Aaux;
+  font-weight: 400;
+  src: url('../fonts/Aaux ProLight.eot');
+  src: url('../fonts/Aaux ProLight.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Aaux ProLight.ttf') format('truetype');
+}
+@font-face {
+  font-family: Aaux;
+  font-weight: 600;
+  src: url('../fonts/Aaux ProMedium.eot');
+  src: url('../fonts/Aaux ProMedium.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Aaux ProMedium.ttf') format('truetype');
+}
+@font-face {
+  font-family: Aaux;
+  font-weight: 800;
+  src: url('../fonts/Aaux ProBlack.eot');
+  src: url('../fonts/Aaux ProBlack.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Aaux ProBlack.ttf') format('truetype');
+}

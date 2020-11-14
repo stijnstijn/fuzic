@@ -1,0 +1,193 @@
+.sidebar-wrap {
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  font-size: $fontsize;
+  
+  h3 {
+    font-family: Aaux, sans-serif;
+    color: $highlight-color;
+    font-weight: bold;
+    font-size: $bigger;
+  }
+  
+  hr {
+    width: 190px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+  
+  hr:first-child {
+    margin-top: 0;
+  }
+  
+}
+
+#filter-form {
+  font-size: 0;
+  margin-top: 8px;
+  
+  input, button {
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+    padding: 4px;
+    height: 32px;
+  }
+
+  input {
+    border: 1px solid $grey;
+    height: 32px;
+    border-radius: $radius 0 0 $radius;
+    font-size: 12px;
+    box-sizing: border-box;
+    width: 158px;
+  }
+  
+  button {
+    border: 1px solid $grey;
+    border-left: 0;
+    @include background-gradient;
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    font-size: $fontsize;
+    cursor: pointer;
+    padding: 4px 8px;
+  }
+  
+  .fa {
+    color: $white;
+  }
+}
+
+nav.calendar {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  
+  a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+
+  h4 {
+    border: 1px solid $grey;
+    border-bottom: 0;
+    display: block;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    width: 182px;
+    font-size: 12px;
+    text-align: center;
+    padding: 1px 4px;
+    height: 24px;
+    position: relative;
+  }
+  
+  h4 a {
+    display: inline-block;
+    padding: 0 8px;
+  }
+  
+  .year > li {
+    display: inline;
+  }
+  
+  .months {
+    border: 1px solid $grey;
+    width: 192px;
+    box-sizing: border-box;
+    font-size: 0;
+    top: 24px;
+    left: 0;
+    background: $white;
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+    
+    li:not(:last-child) {
+      border-bottom: 1px solid $grey;
+    }
+  }
+  
+  .months h5, .weeks a {
+    font-size: $smaller;
+  }
+  
+  .months h5 {
+    width: 45px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-right: 1px solid $grey;
+    text-align: center;
+  }
+  
+  .months li:last-child h5 {
+    border-bottom-left-radius: $radius;
+  }
+  
+  .months li:last-child li:nth-child(5) {
+    border-bottom-right-radius: $radius;
+  }    
+  
+  .months h5 a {
+    padding: 0 4px;
+    font-size: 11px;
+  }
+  
+  .weeks {
+    border-left: 0;
+    height: 24px;
+  }
+  
+  .weeks, .weeks li, .months h5 {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .weeks li {
+    border-right: 1px solid $grey;
+    width: 28px;
+    text-align: center;
+  }
+  
+  .weeks li:nth-child(5) {
+    border-right: 0;
+  }
+  
+  .weeks li a {
+    padding: 0 4px;
+    font-size: 12px;
+  }
+  
+  li.current, h5.current, h5:hover, .weeks li:hover {
+    @include background-gradient;
+    color: $white;
+  }
+  
+  .prev, .next {
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    color: $dark-grey;
+    font-size: $smallest;
+    line-height: 16px;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    transition: .25s;
+    border-radius: $radius;
+  }
+  
+  .next {
+    right: 4px;
+    left: auto;
+  }
+  
+  .prev:hover, .next:hover {
+    background: $highlight-color;
+    color: $white;
+  }
+}

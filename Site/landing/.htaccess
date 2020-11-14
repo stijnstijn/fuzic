@@ -1,0 +1,17 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^tf.fuzic.nl$ [NC]
+RewriteRule ^(.*)$ https://www.stijnpeeters.nl/tf/ [L,R=301]
+
+RewriteCond %{HTTP_HOST} !^([a-z]*).fuzic.nl$ [NC]
+RewriteCond %{HTTP_HOST} !^starcraft.museum$ [NC]
+RewriteCond %{HTTP_HOST} !^fuzic.dev$ [NC]
+RewriteRule (.*) https://www.fuzic.nl/$1 [L,R=301]
+
+RewriteCond %{HTTPS} !^on$
+RewriteRule (.*) https://%{HTTP_HOST}/$1 [R,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [L]
+
+Options -Indexes

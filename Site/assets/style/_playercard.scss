@@ -1,0 +1,382 @@
+.player-card {
+  border: 1px solid $dark-grey;
+  border-radius: $radius;
+  background: $white;
+  width: 100%;
+  
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0;
+  position: relative;
+  
+  .profile, img {
+    vertical-align: top;
+    display: inline-block;
+    font-size: 16px;
+  }
+  
+  .profile {
+    width: 783px;
+  }
+
+  header {
+    padding: 8px 8px 4px 8px;
+    position: relative;
+    height: 54px;
+    background: $highlight-color;
+    
+    a, .fa {
+      color: $white;
+    }
+  }
+  
+  h2 {
+    color: $highlight-color;
+    font-size: 260%;
+    line-height: 1.25em;
+    display: inline-block;
+    font-weight: 800;
+    margin-left: 5px;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .team {
+    font-size: 80%;
+    display: inline-block;
+    color: $light-grey;
+  }
+  
+  .team a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .team a:hover {
+    text-decoration: underline;
+    color: $dark-grey;
+  }
+  
+  .type {
+    position: absolute;
+    top: 5px;
+    right: 12px;
+    text-align: center;
+    width: 95px;
+    
+    .fa {
+      color: $white;
+      float: right;
+    }
+    
+    span {
+      text-transform: uppercase;
+      color: $grey;
+      font-size: 80%;
+      float: left;
+      margin-top: 6px;
+      display: none;
+      position: absolute;
+      width: 15em;
+      right: -1em;
+    }
+  }
+  
+  .type:hover span {
+    display: block;
+  }
+  
+  .type.caster {
+    top: 5px;
+  }
+  
+  ul.statistics {
+    border-top: 1px solid $grey;
+    width: 100%;
+    font-size: 0;
+  
+    li {
+      display: inline-block;
+      font-size: 16px;
+      width: 156px;
+      padding: 8px;
+      box-sizing: border-box;
+      position: relative;
+      height: 67px;
+      vertical-align: top;
+    }
+    
+    li:first-child {
+      width: 159px;
+      padding-left: 13px;
+    }
+  
+    li:not(:last-child) {
+      border-right: 1px solid $grey;
+    }
+  }
+  
+  img, .avatar {
+    width: 134px;
+    height: 134px;
+    border-right: 1px solid $grey;
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  header:after {
+    position: absolute;
+    top: 0;
+    left: -135px;
+    width: 134px;
+    height: 134px;
+    content: '';
+    box-shadow: inset 0px 0px 85px rgba(0,0,0,0.3);
+    display: block;
+  }
+  
+  p.rank {
+    font-weight: 800;
+  }
+  
+  ul h3 {
+    text-transform: uppercase;
+    color: $grey;
+    font-size: 80%;
+    transition: .25s;
+  }
+  
+  ul p {
+    font-size: 160%;
+    font-family: Aaux, sans-serif;
+  }
+
+  .link-list {
+    font-size: $fontsize;
+    position: absolute;
+    bottom: 4px;
+    right: 8px;
+    
+    ul, li {
+      display: inline-block;
+      border: 0;
+    }
+    
+    h3, li {
+      font-size: $smaller;
+      color: $highlight-color;
+    }
+    
+    li {
+      margin-left: 1em;
+    }
+    
+    a:not(:hover) {
+      text-decoration: none;
+    }
+  }
+  
+  .avatar {
+    color: $white;
+    font-size: 120px;
+    text-align: center;
+    padding-top: 10px;
+    height: 124px;
+    overflow: hidden;
+    background: $highlight-color;
+  }
+  
+  .live-badge {
+    .fa {
+      color: $red;
+      font-weight: 800;
+    }
+        
+    text-transform: uppercase;
+    display: inline-block;
+  }
+}
+
+.player-card:not(.sticky) {
+  li.live-notice {
+    clear: both;
+    display: block;
+    width: 918px;
+    border-top: 1px solid $grey;
+    position: relative;
+    left: -135px;
+    height: 30px;
+    padding: 4px 8px;
+    font-size: $smaller;
+    text-align: center;
+  }
+
+  .profile.live {
+    ul.statistics {
+      li:nth-child(5) {
+        border-right: 0;
+      }
+    }
+  }
+}
+
+.player-card:hover h3 {
+  color: $dark-grey;
+}
+
+
+.player-card.sticky {
+  position: fixed;
+  top: -15px;
+  z-index: 3;
+  background: $white;
+  left: 50%;
+  margin-left: -480px;
+  width: 958px;
+  border-radius: 0;
+  
+  header {
+    background: $white;
+    
+    a, .fa {
+      color: $highlight-color;
+    }
+  }
+  
+  .profile {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+  
+  ul {
+    background: $white;
+  }
+
+  
+  ul p {
+    font-size: $fontsize;
+    display: inline;
+    float: right;
+  }
+  
+  ul.statistics li {
+    padding: 4px 8px;
+    height: 32px;
+  }
+  
+  li h3 {
+    display: inline-block;
+    position: relative;
+    top: -1px;
+  }
+  
+  li:nth-child(4) h3, li:nth-child(5) h3 {
+    color: transparent;
+    height: 28px;
+    padding-top: 3px;
+    width: 40px;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  li:nth-child(5) {
+    border-right: 1px solid $grey;
+  }
+  
+  li:nth-child(4) h3::before, li:nth-child(5) h3::before {
+    content: 'V×H';
+    transition: .25s;
+    color: $grey;
+  }
+  
+  li:nth-child(5) h3::before  {
+    content: 'rank';
+    transition: .25s;
+    color: $grey;
+  }
+  
+  :hover li:nth-child(2) h3::before {
+    color: $dark-grey;
+  }
+
+  .date, .link-list, .type {
+    display: none;
+  }
+  
+  h2 {
+    font-size: $bigger;
+  }
+  
+  img, .avatar {
+    width: 39px;
+    height: 39px;
+    border-radius: 0;
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    font-size: 32px;
+  }
+  
+  .avatar {
+    padding-top: 4px;
+  }
+  
+  header {
+    height: 27px;
+  }
+  
+  h2 {
+    text-indent: 32px;
+  }
+  
+  .live-notice span {
+    display: none;
+  }
+  
+  header:after {
+    left: 0;
+    width: 39px;
+    height: 39px;
+  }
+  
+  .notable-badge {
+    display: none;
+  }
+}
+
+.player-card.sticky .profile::after {
+  display: block;
+  position: relative;
+  top: 0;
+  left: 50%;
+  margin-left: -478px;
+  content: '\A0';
+  width: 954px;
+  height: 1px;
+  z-index: -1;
+  @include shadow-dark;
+}
+
+.notable-badge {
+  position: absolute;
+  top: 106px;
+  left: 0;
+  cursor: pointer;
+  display: block;
+  background: $highlight-color;
+  font-size: 1.25em;
+  padding-top: 5px;
+  padding-left: 5px;
+  color: $white;  
+  width: 23px;
+  height: 23px;
+  border-top-right-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+.notable-badge:hover {
+  opacity: 1;
+}

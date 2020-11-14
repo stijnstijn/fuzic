@@ -1,0 +1,41 @@
+footer {
+  text-align: center;
+  margin: auto 0 32px;
+
+  li {
+    display: inline-block;
+  }
+  
+  li:not(:last-child)::after {
+    content: ' \2022';
+    position: relative;
+    top: 1px;
+    color: $dark-grey;
+  }
+  
+  li {
+    color: $dark-grey;
+    text-transform: lowercase;
+    font-family: Aaux, sans-serif;
+    text-decoration: none;
+    transition:.25s
+  }
+  
+  a {
+    color: inherit;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+footer li:hover a, footer p a:hover {
+  color: $highlight-color;
+}
+
+footer p {
+    color: $dark-grey;
+    text-transform: lowercase;
+    font-family: Aaux, sans-serif;
+}

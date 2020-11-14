@@ -1,0 +1,268 @@
+.frontpage h2 {
+  font-weight: bold;
+  color: $highlight-color;
+  font-family: Aaux, sans-serif;
+  font-size: 200%;
+  margin: 16px 0;
+}
+
+h2 .more {
+  font-size: $fontsize;
+  opacity: .65;
+  transition: .25s;
+}
+
+h2:hover .more {
+  opacity: 1;
+}
+
+#frontpage-panel {
+  width: 870px;
+  border: 1px solid $grey;
+  border-radius: $radius;
+  margin: 0 auto;
+  font-size: 0;
+
+  .chart, .intro {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .chart {
+    width: 622px;
+    height: 136px;
+  }
+
+  .intro {
+    width: 231px;
+    border-left: 1px solid $grey;
+    padding: 8px;
+    font-size: $fontsize;
+    background: $white;
+  }
+
+  ul {
+    border-top: 1px solid $grey;
+    height: 28px;
+
+    li {
+      font-size: $smaller;
+      padding: 2px 4px;
+      width: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+    }
+
+    li:not(:last-child) {
+      border-right: 1px solid $grey;
+    }
+  }
+}
+
+#top-streams {
+  margin-bottom: 32px;
+}
+
+#top-streams li {
+  display: inline-block;
+  width: 150px;
+  border: 1px solid $grey;
+  border-radius: $radius;
+  font-size: 0;
+  margin-left: 24px;
+  background: $white;
+
+  img, .avatar {
+    width: 150px;
+    height: 150px;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    display: block;
+  }
+
+  .button {
+    position: relative;
+  }
+
+  .button:after {
+    position: absolute;
+    top: -150px;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    content: '';
+    box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 0.3);
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    display: block;
+  }
+
+  .avatar {
+    background: $highlight-color;
+    color: $white;
+    font-size: 140px;
+  }
+
+  .avatar a {
+    color: inherit;
+    display: block;
+    text-align: center;
+    line-height: 155px;
+  }
+
+  h3 {
+    clear: both;
+    border: 1px solid $grey;
+    border-left: 0;
+    border-right: 0;
+    font-size: $bigger;
+    font-weight: 800;
+    color: $highlight-color;
+    overflow: hidden;
+  }
+
+  h3 a {
+    display: block;
+    padding: 4px;
+  }
+
+  .rank, .info {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .rank {
+    width: 42px;
+    height: 32px;
+    border-right: 1px solid $grey;
+    text-align: center;
+    font-family: Aaux, sans-serif;
+    font-size: 26px;
+    padding-top: 10px;
+  }
+
+  .info {
+    font-size: $fontsize;
+    width: 103px;
+    height: 42px;
+    padding-left: 4px;
+
+    h4 {
+      text-transform: uppercase;
+      color: $dark-grey;
+      font-size: $smallest;
+    }
+
+    p {
+      font-family: Aaux, sans-serif;
+      line-height: 10px;
+    }
+  }
+}
+
+
+@-moz-document url-prefix() {
+  #top-streams li .button:after {
+    top: 0 !important;
+  }
+}
+#top-events > li {
+  display: inline-block;
+  border: 1px solid $grey;
+  border-radius: $radius;
+  font-size: 0;
+  margin-left: 16px;
+  background: $white;
+  width: 278.3px;
+
+  h3 {
+    border-bottom: 1px solid $grey;
+    font-size: $bigger;
+    font-weight: 800;
+    height: 64px;
+    background: $highlight-color;
+    color: $white;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+  }
+
+  h3 a {
+    display: block;
+    padding: 8px 8px 12px 8px;
+    height: 38px;
+    overflow: hidden;
+    color: inherit;
+  }
+
+  .info li {
+    box-sizing: border-box;
+    width: 92px;
+    font-size: $smaller;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 8px 8px 8px;
+
+    h4 {
+      font-size: $smallest;
+      text-transform: uppercase;
+      color: $dark-grey;
+    }
+
+    p {
+      font-family: Aaux, sans-serif;
+      font-size: $fontsize;
+      line-height: 10px;
+    }
+  }
+
+  .info li:not(:last-child) {
+    border-right: 1px solid $grey;
+  }
+}
+
+#top-events li:hover h3, #top-streams li:hover h3 {
+  @include background-gradient;
+  color: $white;
+  text-decoration: none;
+  display: block;
+}
+
+#top-events li:hover h3 a, #top-streams li:hover h3 a {
+  color: $white;
+  text-decoration: none;
+}
+
+.live-events {
+  font-size: $smaller;
+  border-bottom: 1px solid $grey;
+  padding: 2px 4px;
+  text-align: center;
+
+  h3 {
+    display: inline-block;
+  }
+  span:not(:last-child)::after {
+    content: ' \2022 ';
+    font-weight: 800;
+  }
+  .fa {
+    color: $red;
+  }
+  .red {
+    color: $red;
+    font-weight: 800;
+  }
+}
+
+/* chart icons */
+svg image {
+  cursor: pointer;
+}
+
+/* Microsoft Edge Browser 12+ (All) - @supports method */
+
+@supports (-ms-ime-align:auto) {
+  #top-streams li .button:after {
+    top: 0;
+  }
+}

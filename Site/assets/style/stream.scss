@@ -1,0 +1,174 @@
+@import 'definitions';
+
+section {
+  h3 {
+    margin: 32px 0 12px 0;
+    color: $highlight-color;
+    font-size: 150%;
+    font-weight: bold;
+  }
+}
+
+.table-wrap, .info ul {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.table-wrap {
+  width: 75%;
+}
+
+.full-width .table-wrap {
+  width: 100%;
+}
+
+.session-info {
+  font-size: 0;
+  
+  ul {
+    width: 25%;
+    font-size: $fontsize;
+    box-sizing: border-box;
+    padding: 8px;
+  }
+  
+  .fa {
+    color: $highlight-color;
+  }
+}
+
+.controllable-chart .chart-matches {
+  display: none;
+}
+
+.controllable-chart .chart-stats {
+  width: 25%;
+  display: inline-block;
+  border: 1px solid $grey;
+  box-sizing: border-box;
+  border-top-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+  border-right: 0;
+  
+  li:not(:last-child) {
+    border-bottom: 1px solid $grey;
+  }
+  
+  p {
+    font-size: $bigger;
+    padding: 0 4px 4px;
+    color: $text-color;
+    font-family: Aaux, sans-serif;
+  }
+  
+  h4 {
+    font-size: $smaller;
+    padding-bottom: 0;
+    transition:.25s
+  }
+}
+
+.controllable-chart .make-chart.event {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.controllable-chart:hover .chart-stats h4 {
+  color: $dark-grey;
+}
+
+.controllable-chart  {
+  .make-chart.session, .make-chart.event {
+    height: 229px;
+  }
+  
+  nav {
+    border: 1px solid $grey;
+    border-bottom: 0;
+    
+    ol, li {
+      display: inline-block;
+      vertical-align: top;
+    }
+    
+    ol {
+      width: 100%;
+      font-size: 0;
+    }
+    
+    a {
+      display: inline-block;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    .now {
+      text-align: center;
+      width: 50%;
+    }
+    
+    li {
+      padding: 4px;
+      box-sizing: border-box;
+      font-size: $fontsize;
+    }
+    
+    li:not(.now) {
+      font-size: $smaller;
+      width: 25%;
+    }
+    
+    li:last-child {
+      text-align: right;
+    }
+  }
+}
+
+form.compare-events-form {
+  border: 1px solid $grey;
+  padding: 8px;
+  background: $white;
+  border-radius: $radius;
+  font-size: 0;
+  
+  input, button {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  input[type=text] {
+    padding: 4px;
+    border-radius: $radius 0 0 $radius;
+    font-size: $fontsize;
+    border: 1px solid $grey;
+    border-right: 0;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 85%;
+  }
+  
+  input[type=submit], button {
+    padding: 4px;
+    border-radius: 0 $radius $radius 0;
+    font-size: $fontsize;
+    border: 1px solid $grey;
+    border-left: 0;
+    cursor: pointer;
+    background: $highlight-color;
+    color: $white;
+    display: inline-block;
+    width: 15%;
+    box-sizing: border-box;
+  }
+  
+  input[type=submit]:hover, button:hover {
+    @include background-gradient;
+  }
+  
+  p {
+    font-size: $fontsize;
+    margin-bottom: 8px;
+  }
+}

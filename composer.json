@@ -1,0 +1,15 @@
+{
+  "name": "stijnstijn/fuzic",
+  "require": {
+    "klein/klein": "2.1.*",
+    "smarty/smarty": "3.1.18",
+    "leafo/scssphp": "0.0.10",
+    "piwik/piwik": "2.3.*",
+    "dg/twitter-php": "3.6",
+    "cebe/markdown": "1.1.*",
+    "google/apiclient": "1.0.*@beta"
+  },
+  "require-dev": {
+    "phpdocumentor/phpdocumentor": "2.*"
+  }
+}
